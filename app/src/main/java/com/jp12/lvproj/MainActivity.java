@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +29,33 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewer;
     TextView textViewer2;
     TextView textViewer3;
+    int orientation;
+    int curPos;
     ArrayList<String> stockSymbols;
     ArrayList<String> stockNames;
     ArrayList<String> stockDescriptions;
     ArrayList<Double> stockPrices;
     ArrayList<Drawable> stockImages;
+    final static String KEYEK = "abcd123";
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEYEK,curPos);
+    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        Log.d("TAG", "onRestoreInstanceState: asdfasdgasg");
+        orientation = getResources().getConfiguration().orientation;
+        super.onRestoreInstanceState(savedInstanceState);
+        curPos = savedInstanceState.getInt(KEYEK,0);
+        textViewer.setText("Name: "+stockNames.get(curPos));
+        textViewer2.setText("Price: "+stockPrices.get(curPos));
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            textViewer3.setText("Description: "+stockDescriptions.get(curPos));
+        } else {
+            // In portrait
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +65,27 @@ public class MainActivity extends AppCompatActivity {
         populateStockPrices();
         populateStockDescripts();
         populateStockImages();
+        orientation = getResources().getConfiguration().orientation;
         listView = findViewById(R.id.id_list_view);
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockSymbols);
         listView.setAdapter(customAdapter);
         textViewer = findViewById(R.id.textView);
         textViewer2 = findViewById(R.id.textView2);
         textViewer3 = findViewById(R.id.textView3);
+
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                curPos = i;
                 textViewer.setText("Name: "+stockNames.get(i));
                 textViewer2.setText("Price: "+stockPrices.get(i));
-                textViewer3.setText("Description: "+stockDescriptions.get(i));
+                if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    textViewer3.setText("Description: "+stockDescriptions.get(i));
+                } else {
+                    // In portrait
+                }
+
             }
         });
     }

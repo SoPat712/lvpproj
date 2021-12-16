@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     TextView textViewer;
     TextView textViewer2;
+    TextView textViewer3;
     ArrayList<String> stockSymbols;
     ArrayList<String> stockNames;
+    ArrayList<String> stockDescriptions;
     ArrayList<Double> stockPrices;
     ArrayList<Drawable> stockImages;
     @Override
@@ -37,19 +39,46 @@ public class MainActivity extends AppCompatActivity {
         populateStockSymbols();
         populateStockNames();
         populateStockPrices();
+        populateStockDescripts();
         populateStockImages();
         listView = findViewById(R.id.id_list_view);
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockSymbols);
         listView.setAdapter(customAdapter);
         textViewer = findViewById(R.id.textView);
         textViewer2 = findViewById(R.id.textView2);
+        textViewer3 = findViewById(R.id.textView3);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 textViewer.setText("Name: "+stockNames.get(i));
                 textViewer2.setText("Price: "+stockPrices.get(i));
+                textViewer3.setText("Description: "+stockDescriptions.get(i));
             }
         });
+    }
+
+    private void populateStockDescripts() {
+        stockDescriptions = new ArrayList<>();
+        stockDescriptions.add("The afasfdasasigiuhdsgasoiugsgiuhasdg");
+        stockDescriptions.add("The ahahah");
+        stockDescriptions.add("The zxccbvzxvb");
+        stockDescriptions.add("The weryw");
+        stockDescriptions.add("The bhghjfdyjfjg");
+        stockDescriptions.add("The wetyu");
+        stockDescriptions.add("The cbxcxvb");
+        stockDescriptions.add("The ndnbvcnvbcn");
+        stockDescriptions.add("The dfhfdhfdshgfdgh");
+        stockDescriptions.add("The cvbn");
+        stockDescriptions.add("The kjkhjk");
+        stockDescriptions.add("The tyitiemernewr");
+        stockDescriptions.add("The asdhahnebn");
+        stockDescriptions.add("The nnern");
+        stockDescriptions.add("The qagf");
+        stockDescriptions.add("The aidwsvihgf");
+        stockDescriptions.add("The qeribggv");
+        stockDescriptions.add("The qwfdfdoqfe");
+        stockDescriptions.add("The qerwgounqwrotqwoijtqoijwer");
+        stockDescriptions.add("The etwnqewnqrenqenr");
     }
 
     private void populateStockImages() {
@@ -58,22 +87,22 @@ public class MainActivity extends AppCompatActivity {
         stockImages.add(getDrawable(R.drawable.upwork));
         stockImages.add(getDrawable(R.drawable.fiverrr));
         stockImages.add(getDrawable(R.drawable.rdfn));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
-        stockImages.add(getDrawable(R.drawable.irbt));
+        stockImages.add(getDrawable(R.drawable.bydnmt));
+        stockImages.add(getDrawable(R.drawable.etsy));
+        stockImages.add(getDrawable(R.drawable.teladoc));
+        stockImages.add(getDrawable(R.drawable.zg));
+        stockImages.add(getDrawable(R.drawable.pinterest));
+        stockImages.add(getDrawable(R.drawable.roku));
+        stockImages.add(getDrawable(R.drawable.altria));
+        stockImages.add(getDrawable(R.drawable.mercado));
+        stockImages.add(getDrawable(R.drawable.intuit));
+        stockImages.add(getDrawable(R.drawable.square));
+        stockImages.add(getDrawable(R.drawable.sea));
+        stockImages.add(getDrawable(R.drawable.philmorr));
+        stockImages.add(getDrawable(R.drawable.salesforce));
+        stockImages.add(getDrawable(R.drawable.disney));
+        stockImages.add(getDrawable(R.drawable.brk));
+        stockImages.add(getDrawable(R.drawable.amazon));
     }
 
     private void populateStockPrices() {

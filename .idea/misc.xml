@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout-land/activity_main.xml" value="0.67" />
+        <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout-land/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout-land/activity_main_land.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout/activity_main.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout/adapter_custom.xml" value="0.12447916666666667" />
         <entry key="..\:/Users/10015469/AndroidStudioProjects/lvproj/lvpproj/app/src/main/res/layout/main_activity_land.xml" value="0.19537037037037036" />
       </map>
     </option>

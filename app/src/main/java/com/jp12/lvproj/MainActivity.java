@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
         orientation = getResources().getConfiguration().orientation;
         listView = findViewById(R.id.id_list_view);
         removedList = new ArrayList<>();
-        Stock stock = new Stock();
-        stockArrayList.add(Stock());
+
+        stockArrayList.add(new Stock("IRBT", ""));
         stockArrayList = new ArrayList<>();
-        customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockSymbols);
+        customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockArrayList);
         listView.setAdapter(customAdapter);
         textViewer = findViewById(R.id.textView);
         textViewer2 = findViewById(R.id.textView2);

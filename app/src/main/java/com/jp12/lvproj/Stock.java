@@ -11,6 +11,11 @@ public class Stock {
     double stockPrices;
     Drawable stockImages;
     public Stock(String stockSymbols, String stockNames, String stockDescriptions, double stockPrices, Drawable stockImages) {
+        this.stockSymbols = stockSymbols;
+        this.stockNames = stockNames;
+        this.stockDescriptions = stockDescriptions;
+        this.stockPrices = stockPrices;
+        this.stockImages = stockImages;
 
     }
 

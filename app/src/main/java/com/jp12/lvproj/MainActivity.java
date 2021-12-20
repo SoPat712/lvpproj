@@ -97,9 +97,28 @@ public class MainActivity extends AppCompatActivity {
         orientation = getResources().getConfiguration().orientation;
         listView = findViewById(R.id.id_list_view);
         removedList = new ArrayList<>();
-
-        stockArrayList.add(new Stock("IRBT", ""));
         stockArrayList = new ArrayList<>();
+
+        stockArrayList.add(new Stock("IRBT", "iRobot","iRobot is an American company that creates robots intended for consumer use. They are popularly known for their vacuuming line of technology, the Roomba.",);
+        stockArrayList.add(new Stock("UPWK", "Upwork","Upwork is a freelancing platform, that allows freelancers to connect to agencies that need their services.",));
+        stockArrayList.add(new Stock("FVRR", "Fiverr","Fiverr is a site on which normal individuals can hire people with exceptional talents, like performing songs, or making videos, skills that you can easily outsource to fiverr individuals.",));
+        stockArrayList.add(new Stock("RDFN", "Redfin","Redfin is a real estate company, on which you can list your home, and upon the house being sold, you pay just 1.0 or 1.5% of the sell price to Redfin",));
+        stockArrayList.add(new Stock("BYND", "Beyond Meat","Beyond Meat is a company specializing in making meat that tastes like real meat, entirely with vegetables. This is a ridiculous feat, as meat is a hard taste to replicate, but so far their research seems to be going well.",));
+        stockArrayList.add(new Stock("ETSY", "Etsy","Etsy is an online marketplace, centered in America, that specializes in handmade of vintage items. This can be a good way to get things like custom jewelry, bags, clothes, and furniture suited especially for you.",));
+        stockArrayList.add(new Stock("TDOC", "Teladoc Health","Teladoc is a telemedicine company that specializes in ensuring that everyone everywhere has access to medical opinions. They are also branching into AI, and understanding more about how to better diagnose patients.",));
+        stockArrayList.add(new Stock("ZG", "Zillow Group","",));
+        stockArrayList.add(new Stock("PINS", "Pinterest","",));
+        stockArrayList.add(new Stock("ROKU", "Roku","",));
+        stockArrayList.add(new Stock("MO", "Altria Group","",));
+        stockArrayList.add(new Stock("MELI", "MercadoLibre","",));
+        stockArrayList.add(new Stock("ISRG", "Intuitive Surgical","",));
+        stockArrayList.add(new Stock("SQ", "Square","",));
+        stockArrayList.add(new Stock("SE", "Sea Limited","",));
+        stockArrayList.add(new Stock("PM", "Philip Morris International","",));
+        stockArrayList.add(new Stock("CRM", "salesforce.com","",));
+        stockArrayList.add(new Stock("DIS", "Walt Disney","",));
+        stockArrayList.add(new Stock("BRK.B", "Berkshire Hathaway B","",));
+        stockArrayList.add(new Stock("AMZN", "Amazon","Amazon is a global marketplace, on which you can order everything from bedframes to mousepads, all of which will be delivered to your front door in two days time with Amazon Prime. This is one of the largest companies in the world, with a GDP higher than many countries.",""));
         customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockArrayList);
         listView.setAdapter(customAdapter);
         textViewer = findViewById(R.id.textView);

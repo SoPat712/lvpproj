@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout prevObj;
     ArrayList<String> stockSymbols;
     ArrayList<String> nullStuff;
+    ArrayList<Stock> stockArrayList;
     ArrayList<String> stockNames;
     ArrayList<String> stockDescriptions;
     ArrayList<Double> stockPrices;
@@ -71,14 +72,17 @@ public class MainActivity extends AppCompatActivity {
             stockNames.remove(a);
             stockPrices.remove(a);
         }
-        textViewer.setText("Name: "+stockNames.get(curPos));
-        textViewer2.setText("Price: "+stockPrices.get(curPos));
-        listView.setAdapter(customAdapter);
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            textViewer3.setText("Description: "+stockDescriptions.get(curPos));
-        } else {
-            // In portrait
+        if(curPos != -1){
+            textViewer.setText("Name: "+stockNames.get(curPos));
+            textViewer2.setText("Price: "+stockPrices.get(curPos));
+            listView.setAdapter(customAdapter);
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                textViewer3.setText("Description: "+stockDescriptions.get(curPos));
+            } else {
+                // In portrait
+            }
         }
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
         orientation = getResources().getConfiguration().orientation;
         listView = findViewById(R.id.id_list_view);
         removedList = new ArrayList<>();
-
+        Stock stock = new Stock();
+        stockArrayList.add(Stock());
+        stockArrayList = new ArrayList<>();
         customAdapter = new CustomAdapter(this, R.layout.adapter_custom, stockSymbols);
         listView.setAdapter(customAdapter);
         textViewer = findViewById(R.id.textView);
